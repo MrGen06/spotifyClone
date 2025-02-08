@@ -4,7 +4,7 @@ function insertSongs() {
     const songs = [
         {
             name: "Kasturi - Amar Prem Ki Prem Kahani",
-            path: "/songs/arijit/Kasturi - Amar Prem Ki Prem Kahani 320 Kbps.mp3"
+            path: "./songs/arijit/Kasturi - Amar Prem Ki Prem Kahani 320 Kbps.mp3"
         }
         // Add more songs here as needed
     ];
@@ -17,11 +17,11 @@ function insertSongs() {
     
         songCard.innerHTML = `
             <div class="song-info">
-                <img src="/icons/music.svg" alt="music" class="song-thumbnail">
+                <img src="./icons/music.svg" alt="music" class="song-thumbnail">
                 <span class="song-title">${song.name}</span>
             </div>
             <button class="play-btn song-play-btn" data-song-index="${index}">
-                <img src="/icons/play.svg" alt="play" class="play-icon">
+                <img src="./icons/play.svg" alt="play" class="play-icon">
             </button>
         `;
     
@@ -45,7 +45,7 @@ function insertSongs() {
         
             let playbar = document.querySelector('.playbar');
             playbar.classList.add('visible');
-            document.getElementById('play_img').src = '/icons/pause.svg';
+            document.getElementById('play_img').src = './icons/pause.svg';
         
             // Update song name in playbar
             document.querySelector('.song-name').textContent = songs[index].name;
@@ -84,7 +84,7 @@ function playSongOnClick(btn_class) {
                 currentAudio.pause();
             }
 
-            currentAudio = new Audio('/songs/arijit/Kasturi - Amar Prem Ki Prem Kahani 320 Kbps.mp3');
+            currentAudio = new Audio('./songs/arijit/Kasturi - Amar Prem Ki Prem Kahani 320 Kbps.mp3');
             currentAudio.addEventListener('timeupdate', updateProgressBar);
             currentAudio.volume = document.getElementById('volume').value / 100;
             currentAudio.play().catch(error => {
@@ -93,7 +93,7 @@ function playSongOnClick(btn_class) {
             
             let playbar = document.querySelector('.playbar');
             playbar.classList.add('visible');
-            playImg.src = '/icons/pause.svg';                
+            playImg.src = './icons/pause.svg';                
         });
     }
 }
@@ -106,10 +106,10 @@ function playPause(btn_id) {
         if (currentAudio) {
             if (currentAudio.paused) {
                 currentAudio.play();
-                playImg.src = '/icons/pause.svg';
+                playImg.src = './icons/pause.svg';
             } else {
                 currentAudio.pause();
-                playImg.src = '/icons/play.svg';
+                playImg.src = './icons/play.svg';
             }
         }
     });
@@ -131,13 +131,13 @@ volumeControl.addEventListener('input', function() {
     if (currentAudio) {
         currentAudio.volume = volumeControl.value / 100;
         if (volumeControl.value == 0) {
-            volumeIcon.src = '/icons/mute.svg';
+            volumeIcon.src = './icons/mute.svg';
         } else if (volumeControl.value <= 30) {
-            volumeIcon.src = '/icons/volume-low.svg';
+            volumeIcon.src = './icons/volume-low.svg';
         } else if (volumeControl.value <= 70) {
-            volumeIcon.src = '/icons/volume-medium.svg';
+            volumeIcon.src = './icons/volume-medium.svg';
         } else {
-            volumeIcon.src = '/icons/volume.svg';
+            volumeIcon.src = './icons/volume.svg';
         }
     }
 });
