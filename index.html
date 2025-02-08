@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="responsiveStyle.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo_div">
+            <img src="/icons/logo.svg" alt="Spotify Logo" id="logo">
+        </div>
+
+        <div class="search_div">
+            <button id="home_btn" class="home">
+                <img src="/icons/home.svg" alt="Home" id="home_icon">
+            </button>
+            <div class="connected_search_bar">
+                <button id="search_btn" class="home">
+                    <img src="/icons/search.svg" alt="Search" id="search_icon">
+                </button>    
+                <input type="text" placeholder="What do you want to play?" id="search_bar">
+                <button id="browse" class="home">
+                    <img src="/icons/browse.svg" alt="Browse" id="browse_icon">
+                </button>
+            </div>
+        </div>
+
+        <div class="profile_div">
+            <button class="user" id="signUp">Sign up</button>
+            <button class="user" id="login">Log in</button>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="left">
+            <div class="left_head">
+                <button id="lib_btn">
+                    <img src="/icons/playlist.svg" alt="Library" id="lib_icon">
+                    <span id="lib_text">Your Library</span>
+                </button>
+                <!-- <button id="playlists_btn">
+                    <img src="/spotify clone/icons/plus.svg" alt="Playlists" id="playlists_icon">
+                </button> -->
+            </div>
+            <!-- <div class="card1">
+                <div id="card1_head1">Create your first playlist</div>
+                <div id="card1_head2">It's easy, we'll help you</div>
+                <button id="create_btn">Create Playlist</button>
+            </div> -->
+            <!-- <div class="card2">
+                <div id="card2_head1">Let's find some podcasts to follow</div>
+                <div id="card1_head2">We'll keep you updated on new episodes</div>
+                <button id="pod_btn">Browse Podcasts</button>
+            </div> -->
+
+            <div class="gaane">
+                
+            </div>
+
+            <div class="foot">
+                <div class="line1">
+                    <a href="#" class="end">Legal</a>
+                    <a href="#" class="end">Safety&PrivacyCenter</a>
+                    <a href="#" class="end">Privacy Policy</a>
+                    <a href="#" class="end">Cookies</a>
+                </div>
+                <div class="line2">
+                    <a href="#" class="end">About Ads</a>
+                    <a href="#" class="end">Accessibility</a>
+                </div>
+                <div class="line3">
+                    <a href="#" class="end">Cookies</a>
+                </div>
+                <div class="language">
+                    <button id="lang_btn">
+                        <img src="/icons/lang.svg" alt="Globe" id="globe_icon"> English
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+        <div class="right">
+            <div class="artists">
+                <div class="right_head">
+                    <h2 class="card_head">Popular artists</h2>
+                    <button class="show_all">Show All</button>
+                </div>
+                <div class="artist_list">
+                    <div class="artist_card">
+                        <button id="artist1" class="artist">
+                            <img src="/images/pritam.jpg" alt="Pritam" id="pritam_img" class="artist_img">
+                        </button><br>
+                        <a href="#" class="naam">Pritam</a><br>
+                        <span class="who">Artist</span>
+                    </div>
+                    <div class="artist_card">
+                        <button id="artist2" class="artist">
+                            <img src="/images/arijit.jpg" alt="Arijit" id="arijit_img" class="artist_img">
+                        </button><br>
+                        <a href="#" class="naam">Arijit Singh</a><br>
+                        <span class="who">Artist</span>
+                    </div>                    
+                    <div class="artist_card">
+                        <button id="artist3" class="artist">
+                            <img src="/images/sachin_jigar.jpg" alt="Sachin-Jigar" id="sachin_jigar_img" class="artist_img">
+                        </button><br>
+                        <a href="#" class="naam">Sachin-Jigar</a><br>
+                        <span class="who">Artist</span>
+                    </div>
+                    <div class="artist_card">
+                        <button id="artist4" class="artist">
+                            <img src="/images/ar_rahman.jpg" alt="Rahman" id="rahman_img" class="artist_img">
+                        </button><br>
+                        <a href="#" class="naam">A.R. Rahman</a><br>
+                        <span class="who">Artist</span>
+                    </div>
+                    <div class="artist_card">
+                        <button id="artist5" class="artist">
+                            <img src="/images/vishal_shekhar.jpg" alt="Vishal-Shekhar" id="vishal_shekhar_img" class="artist_img">
+                        </button><br>
+                        <a href="#" class="naam">Vishal-Shekhar</a><br>
+                        <span class="who">Artist</span>
+                    </div>
+                    <div class="artist_card">
+                        <button id="artist6" class="artist">
+                            <img src="/images/atif_aslam.jpg" alt="Atif" id="atif_img" class="artist_img">
+                        </button><br>
+                        <a href="#" class="naam">Atif Aslam</a><br>
+                        <span class="who">Artist</span>
+                    </div>
+                    <div class="artist_card">
+                        <button id="artist7" class="artist">
+                            <img src="/images/anirudh.jpg" alt="Anirudh" id="anirudh_img" class="artist_img">
+                        </button><br>
+                        <a href="#" class="naam">Anirudh Ravichander</a><br>
+                        <span class="who">Artist</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="albums">
+                <div class="right_head">
+                    <h2 class="card_head">Popular albums and singles</h2>
+                    <button class="show_all">Show All</button>
+                </div>
+                <div class="album_list">
+                    <div class="album_card">
+                        <button id="album1" class="album">
+                            <img src="/images/glory.jpg" alt="glory" id="glory_img" class="album_img">
+                        </button><br>
+                        <a href="#" class="naam">GLORY</a><br>
+                        <span class="who">Yo Yo Honey Singh</span>
+                    </div>
+                    <div class="album_card">
+                        <button id="album2" class="album">
+                            <img src="/images/aashiqui_2.jpg" alt="aashiqui_2" id="aashiqui_2_img" class="album_img">
+                        </button><br>
+                        <a href="#" class="naam">Aashiqui 2</a><br>
+                        <span class="who">Mithoon, Ankit Tiwari, Jeet Gannguli</span>
+                    </div>
+                    <div class="album_card">
+                        <button id="album3" class="album">
+                            <img src="/images/jo_tum_mere_ho.jpg" alt="jo_tum_mere_ho" id="jo_tum_mere_ho_img" class="album_img">
+                        </button><br>
+                        <a href="#" class="naam">Jo Tum Mere Ho</a><br>
+                        <span class="who">Anuv Jain</span>
+                    </div>
+                    <div class="album_card">
+                        <button id="album4" class="album">
+                            <img src="/images/making_memories.jpg" alt="making_memories" id="making_memories_img" class="album_img">
+                        </button><br>
+                        <a href="#" class="naam">Making Memories</a><br>
+                        <span class="who">Karan Aujla</span>
+                    </div>
+                    <div class="album_card">
+                        <button id="album5" class="album">
+                            <img src="/images/who_remixes.jpg" alt="who_remixes" id="who_remixes_img" class="album_img">
+                        </button><br>
+                        <a href="#" class="naam">Who (Remixes)</a><br>
+                        <span class="who">Jimin</span>
+                    </div>
+                    <div class="album_card">
+                        <button id="album6" class="album">
+                            <img src="/images/patandar.jpg" alt="patandar" id="patandar_img" class="album_img">
+                        </button><br>
+                        <a href="#" class="naam">Patandar</a><br>
+                        <span class="who">Arjan Dhillon, Mxrci</span>
+                    </div>
+                    <div class="album_card">
+                        <button id="album7" class="album">
+                            <img src="/images/yjhd.jpg" alt="yjhd" id="yjhd_img" class="album_img">
+                        </button><br>
+                        <a href="#" class="naam">Yeh Jawaani Hai Deewani</a><br>
+                        <span class="who">Pritam</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pop_radio">
+                <div class="right_head">
+                    <h2 class="card_head">Popular radio</h2>
+                    <button class="show_all">Show All</button>
+                </div>
+                <div class="pop_list">
+                    <div class="pop_card">
+                        <button id="radio1" class="pop">
+                            <img src="/images/arijit_radio.jpg" alt="Arijit Radio" id="arijit_radio_img" class="pop_img">
+                        </button><br>
+                        <span class="who">With Atif Aslam, Sachin-Jigar, Amit...</span>
+                    </div>
+                    <div class="pop_card">
+                        <button id="radio2" class="pop">
+                            <img src="/images/alka_radio.jpg" alt="Arlka Radio" id="alka_radio_img" class="pop_img">
+                        </button><br>
+                        <span class="who">With Kumar Sanu, Vinod Rathod, Udi...</span>
+                    </div>
+                    <div class="pop_card">
+                        <button id="radio3" class="pop">
+                            <img src="/images/diljit_radio.jpg" alt="Diljit Radio" id="diljit_radio_img" class="pop_img">
+                        </button><br>
+                        <span class="who">With Karan Aujla, Shubh, AP Dhillon...</span>
+                    </div>
+                    <div class="pop_card">
+                        <button id="radio4" class="pop">
+                            <img src="/images/shreya_radio.jpg" alt="Shreya Radio" id="shreya_radio_img" class="pop_img">
+                        </button><br>
+                        <span class="who">With A.R. Rahman, Vishal-Shekhar, At...</span>
+                    </div>
+                    <div class="pop_card">
+                        <button id="radio5" class="pop">
+                            <img src="/images/kk_radio.jpg" alt="KK Radio" id="kk_radio_img" class="pop_img">
+                        </button><br>
+                        <span class="who">With Armaan Malik, Mohit Chauan,...</span>
+                    </div>
+                    <div class="pop_card">
+                        <button id="radio6" class="pop">
+                            <img src="/images/kishore_radio.jpg" alt="Kishore Radio" id="kishore_radio_img" class="pop_img">
+                        </button><br>
+                        <span class="who">With Mohammed Rafi, Mukesh, Ash...</span>
+                    </div>
+                    <div class="pop_card">
+                        <button id="radio7" class="pop">
+                            <img src="/images/honey_radio.jpg" alt="Honey Radio" id="honey_radio_img" class="pop_img">
+                        </button><br>
+                        <span class="who">With Diljit Dosanjh, Harrdy Sandhu,...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="foot_right">
+                <div class="foot1">
+                    <div class="col1">
+                        <span class="last">Company</span><br>
+                        <a class="last_links" href="#">About</a><br>
+                        <a class="last_links" href="#">Jobs</a><br>
+                        <a class="last_links" href="#">For the Record</a>
+                    </div>
+                    <div class="col2">
+                        <span class="last">Communities</span><br>
+                        <a class="last_links" href="#">For Artists</a><br>
+                        <a class="last_links" href="#">Developers</a><br>
+                        <a class="last_links" href="#">Advertising</a><br>
+                        <a class="last_links" href="#">Investors</a><br>
+                        <a class="last_links" href="#">Vendors</a>
+                    </div>
+                    <div class="col3">
+                        <span class="last">Useful links</span><br>
+                        <a class="last_links" href="#">Support</a><br>
+                        <a class="last_links" href="#">Free Mobile App</a>
+                    </div>
+                    <div class="col4">
+                        <span class="last">Spotify Plans</span><br>
+                        <a class="last_links" href="#">Premium Individual</a><br>
+                        <a class="last_links" href="#">Premium Duo</a><br>
+                        <a class="last_links" href="#">Premium Family</a><br>
+                        <a class="last_links" href="#">Premium Student</a><br>
+                        <a class="last_links" href="#">Spotify Free</a>
+                    </div>
+                    <div class="col5">
+                        <button id="insta" class="scl_btn">
+                            <img src="/icons/insta_logo.svg" alt="instagram" id="insta_logo" class="social">
+                        </button>
+                        <button id="twitter" class="scl_btn">
+                            <img src="/icons/twitter_logo.svg" alt="twitter" id="twitter_logo" class="social">
+                        </button>
+                        <button id="facebook" class="scl_btn">
+                            <img src="/icons/facebook_logo.svg" alt="facebook" id="facebook_logo" class="social">
+                        </button>
+                    </div>
+                </div>
+                <hr>
+                <div class="foot2">
+                    © 2025 Spotify AB
+                </div>
+            </div>
+
+
+            <div class="playbar">
+                <div class="music-info">
+                    <div class="music-icon-img">
+                        <img src="/icons/music.svg" alt="music" class="music-icon">
+                    </div>
+                    <span class="song-name">Kasturi - Amar Prem Ki Prem Kahani</span>
+                </div>
+                <div class="player-progress-wrapper">
+                    <div class="play_container">
+                        <button id="prev_btn" class="player">
+                            <img src="/icons/prev.svg" alt="previous" id="prev_img" class="player_img">
+                        </button>
+                        <button id="play_btn" class="player">
+                            <img src="/icons/play.svg" alt="play" id="play_img" class="player_img">
+                        </button>
+                        <button id="next_btn" class="player">
+                            <img src="/icons/next.svg" alt="next" id="next_img" class="player_img">
+                        </button>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <input type="range" id="progress" class="progress" min="0" max="100" value="0" step="1">
+                            <div class="progress-duration">
+                                <span id="current-time">0:00</span>
+                                <span id="duration">0:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="volume-container">
+                    <img src="/icons/volume.svg" alt="volume" id="volume-icon" class="volume-icon">
+                    <input type="range" id="volume" class="volume" min="0" max="100" value="100" step="1">
+                </div>
+            </div>
+    </div>
+
+    <script src="/script.js"></script>
+    </body>
+</html>

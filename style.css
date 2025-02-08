@@ -1,0 +1,602 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: #ffffff;
+    height: 64px;
+    padding: 0 32px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.logo_div {
+    flex: 1;
+}
+
+.search_div {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.profile_div {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+/* Button Styles */
+#home_btn,
+#browse,
+#search_btn,
+#playlists_btn {
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#home_btn {
+    border-radius: 50%;
+    background-color: #202020;
+    transition: transform 0.2s ease;
+    position: relative;
+}
+
+#home_btn:hover {
+    transform: scale(1.1);
+}
+
+#home_btn:hover::after {
+    content: "Home";
+    position: absolute;
+    background-color: #202020;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Icon Styles */
+#home_icon,
+#browse_icon,
+#search_icon,
+#lib_icon,
+#playlista_icon {
+    width: 25px;
+}
+
+#search_icon {
+    position: relative;
+}
+
+#search_icon:hover::after {
+    content: "Search";
+    position: absolute;
+    background-color: #202020;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* Search Bar */
+.connected_search_bar {
+    display: flex;
+    align-items: center;
+    background-color: #202020;
+    border-radius: 24px;
+    overflow: hidden;
+    flex: 1;
+    border: 2px solid transparent;
+}
+
+.connected_search_bar:focus-within {
+    border: 2px solid white;
+}
+
+/* Add this to remove the blue outline */
+#search_bar:focus {
+    outline: none;  /* This removes the blue outline */
+}
+
+#browse {
+    background-color: #202020;
+    padding: 12px 15px;
+    transition: transform 0.2s ease;
+    position: relative; /* Ensures ::after is positioned relative to #browse */
+}
+
+#browse:hover {
+    transform: scale(1.1);
+}
+
+#browse:hover::after {
+    content: "Browse";
+    position: absolute; /* Positioned relative to #browse */
+    background-color: #202020;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    bottom: -30px; /* Adjust the distance from the button */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Centering adjustment */
+    white-space: nowrap; /* Prevent text wrapping */
+    z-index: 10; /* Ensure it appears above other elements */
+}
+
+#search_bar {
+    flex: 1;
+    height: 48px;
+    border: none;
+    padding: 5px 15px;
+    background-color: #202020;
+    color: white;
+    font-size: 16px;
+}
+
+#search_btn {
+    background-color: #202020;
+    padding: 12px 15px;
+}
+
+/* Sign Up and Login Buttons */
+#signUp {
+    padding: 10px 20px;
+    border: none;
+    background: transparent;
+    color: #b4b2b2;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#signUp:hover {
+    color: white;
+}
+
+#login {
+    border: none;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    height: 48px;
+    width: 110px;
+}
+
+/* Main Layout */
+.main {
+    display: flex;
+    height: 100vh;
+}
+
+.left {
+    background-color: #121212;
+    width: 25%;
+    padding: 20px;
+    position: fixed; /* Changed from relative to fixed */
+    border-radius: 5px;
+    margin-left: 10px;
+    top: 64px; /* Adjusted to create space for logo */
+    bottom: 0; /* Added to make it full height */
+}
+
+.right {
+    background: linear-gradient(to bottom, #202020, #0b0b0b);
+    width: 75%;
+    margin-left: calc(25% + 20px);
+    border-radius: 5px;
+    position: relative;
+    top: 64px;
+    overflow-y: auto;
+    height: calc(100vh - 64px);
+}
+
+/* Left Section */
+.left_head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: #121212;
+    padding: 10px 0;
+    z-index: 1;
+}
+
+#lib_btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#lib_text {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* #playlists_btn {
+    background: none;
+    border: none;
+    color: white;
+}
+
+#playlists_icon {
+    width: 15px;
+} */
+
+/* Cards */
+/* .card1, .card2 {
+    background-color: #202020;
+    padding: 10px;
+    border-radius: 5px;
+    height: 15vh;
+}
+
+.card1 {
+    margin-bottom: 25px;
+    margin-top: 3vh;
+}
+
+.card2 {
+    margin-bottom: 10px;
+}
+
+#card1_head1,
+#card2_head1 {
+    font-weight: bolder;
+    margin: 8px;
+}
+
+#card1_head2,
+#card2_head2 {
+    font-size: smaller;
+    margin: 8px;
+} */
+
+/* #create_btn,
+#pod_btn {
+    background-color: white;
+    border: none;
+    color: black;
+    font-weight: bolder;
+    font-size: smaller;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 8px;
+} */
+
+.gaane {
+    margin-top: 20px;
+}
+
+/* Footer */
+.foot {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: space-between;
+    height: 20vh;
+}
+
+.end {
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+    margin-right: 10px;
+}
+
+.language {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #707070;
+    width: 100px;
+    height: 30px;
+    border-radius: 30px;
+}
+
+#lang_btn,
+.scl_btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#globe_icon {
+    width: 15px;
+    vertical-align: middle;
+}
+
+.artist_list,
+.album_list,
+.pop_list {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.artist_img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.artist,
+.album,
+.pop {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.naam {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.who {
+    color: #b4b2b2;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.right_head {
+    margin: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.artist_card,
+.album_card,
+.pop_card {
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.artist_card:hover,
+.album_card:hover,
+.pop_card:hover {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1));
+}
+
+.show_all {
+    background: transparent;
+    border: none;
+    color: #b4b2b2;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.album_img,
+.pop_img {
+    width: 130px;
+    height: 130px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.foot_right {
+    margin-top: 60px;
+}
+
+.foot1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 30px;
+}
+
+.last {
+    font-weight: bolder;
+}
+
+.last_links {
+    color: #b4b2b2;
+    text-decoration: none;
+}
+
+.col1, .col2, .col3, .col4 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.social {
+    width: 20px;
+    vertical-align: middle;
+}
+
+.scl_btn {
+    display: inline-block;
+    background-color: #202020;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+hr {
+    margin: 35px 35px;
+    height: 1px;
+    border: none;
+    background-color: #2d2d2d;
+}
+
+.foot2 {
+    margin: 30px;
+    font-size: 15px;
+    color: #b4b2b2;
+}
+
+.playbar {
+    background-color: black;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 120px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playbar.visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Left section */
+.music-info {
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.music-icon-img {
+    height: 80px;
+    width: 80px;
+    display: flex;
+    background-color: #2d2d2d;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.music-icon {
+    width: 30px;
+}
+
+/* Center section */
+.player-progress-wrapper {
+    flex: 1;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.play_container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.player {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#play_btn {
+    border-radius: 50%;
+    border: 1px solid white;
+    width: 40px;
+    height: 40px;
+}
+
+.progress-container {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.progress-bar {
+    width: 100%;
+}
+
+.progress {
+    width: 100%;
+    height: 4px;
+}
+
+.progress-duration {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+/* Right section */
+.volume-container {
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.volume {
+    width: 100px;
+}
+
+.volume-icon {
+    width: 24px;
+}
